@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Pizza Request Dataset</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.0.5.2 (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+		@page { margin: 0.79in}
+		P { margin-bottom: 0.08in}
+		PRE.ctl { font-family: "Lohit Hindi", monospace}
+    pre {
+     width: 100%;
+     white-space: pre-wrap;       /* css-3 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */}
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<PRE CLASS="western">Pizza Request Dataset
+
+Release: 1.0 (04/12/2014)
+_______________________________________________________________________________
+
+Dataset: <a href="http://cs.stanford.edu/~althoff/raop-dataset/pizza_request_dataset.tar.gz" target="_blank" onclick="_gaq.push(['_trackEvent','Download','Dataset',this.href]);">http://cs.stanford.edu/~althoff/raop-dataset/pizza_request_dataset.tar.gz</a>
+Paper: <a href="http://cs.stanford.edu/~althoff/raop-dataset/altruistic_requests_icwsm.pdf" target="_blank" onclick="_gaq.push(['_trackEvent','Download','Paper',this.href]);">http://cs.stanford.edu/~althoff/raop-dataset/altruistic_requests_icwsm.pdf</a>
+
+
+This dataset contains a collection of 5671 textual requests for pizza from the Reddit community &quot;Random Acts of Pizza&quot; together with their outcome (successful/unsuccessful) and meta-data.
+
+This dataset is released together with following paper:
+
+How to Ask for a Favor: A Case Study on the Success of Altruistic Requests 
+Tim Althoff, Cristian Danescu-Niculescu-Mizil, Dan Jurafsky
+Proceedings of ICWSM, 2014.
+
+Please cite this paper and send us a note if you use this resource in your work. (BibTex included at the end of this file.)
+
+Contact: 
+<script type="text/JavaScript">
+document.write(String.fromCharCode((120-60),(78-13),(40-8),
+(22+50),(119-37),(12+57),(105-35),(101-69),(116-55),(75-43),
+(78-44),(53+56),(55+42),(10+95),(122-14),(35+81),(57+54),
+(72-14),(11+86),(15+93),(27+89),(37+67),(118-7),(52+50),
+(36+66),(59-22),(109-57),(9+39),(75+40),(42+74),(104-7),
+(77+33),(121-19),(113-2),(62+52),(113-13),(2+44),(125-24),
+(13+87),(83+34),(73-10),(77+38),(59+58),(14+84),(4+102),
+(48+53),(60+39),(124-8),(93-32),(93-11),(90-25),(23+56),
+(46+34),(81-44),(74-24),(68-20),(109-9),(40+57),(40+76),
+(117-20),(16+99),(48+53),(119-3),(94-60),(22+40),(53+44),
+(28+80),(64+52),(61+43),(70+41),(48+54),(17+85),(16+48),
+(35+80),(74+42),(118-21),(9+101),(53+49),(116-5),(46+68),
+(111-11),(79-33),(9+92),(113-13),(83+34),(20+40),(55-8),
+(111-46),(65-3)))
+</script>
+<script type="text/JavaScript">
+document.write(String.fromCharCode((110-50),(81-16),
+(100-68),(27+45),(119-37),(117-48),(105-35),(58-26),
+(102-41),(106-74),(73-39),(18+91),(36+61),(5+100),(126-18),
+(81+35),(61+50),(104-46),(2+97),(73+41),(119-14),(13+102),
+(67+49),(123-18),(119-22),(111-1),(95-58),(69-17),(105-57),
+(11+98),(38+74),(16+89),(52-7),(67+48),(17+102),(71+44),
+(8+38),(30+81),(44+70),(108-5),(3+60),(4+111),(44+73),
+(8+90),(22+84),(29+72),(5+94),(13+103),(12+49),(18+64),
+(112-47),(38+41),(40+40),(3+34),(12+38),(15+33),(113-13),
+(101-4),(46+70),(5+92),(43+72),(113-12),(62+54),(92-58),
+(28+34),(125-26),(9+105),(65+40),(36+79),(68+48),(117-12),
+(108-11),(77+33),(1+63),(38+71),(26+86),(1+104),(6+39),
+(52+63),(121-2),(44+71),(48-2),(75+36),(34+80),(52+51),
+(17+43),(81-34),(27+38),(112-50)))
+</script>
+
+
+---- FILES ----
+
+- pizza_request_dataset.json: The dataset in json format.
+
+- read_dataset.py: A simple python script illustrating how to read in the dataset as well as the attributes available for each single request.
+
+- narratives (folder): A folder containing the lexicons used to detect the five narratives described in our paper (desire, family, job, money, student).
+
+- altruistic_requests_icwsm.pdf: the article introducing this dataset.
+
+- README.txt: This README file.
+
+
+
+---- DATA DESCRIPTION AND FORMAT ----
+
+- This dataset includes 5671 requests collected from the Reddit community &quot;Random Acts of Pizza&quot; (<a href="http://www.reddit.com/r/Random_Acts_Of_Pizza/">http://www.reddit.com/r/Random_Acts_Of_Pizza/</a>) between December 8, 2010 and September 29, 2013 (retrieved on September 30, 2013).
+All requests ask for the same thing: a free pizza. The outcome of each request --- whether its author received a pizza or not --- is known.
+Meta-data includes information such as: time of the request, activity of the requester, community-age of the requester, etc.  
+
+- Each entry in pizza_request_dataset.json corresponds to one request (the first and only request by the requester on RAOP).
+
+- For each request, the following fields are included:
+
+  &quot;giver_username_if_known&quot;: Reddit username of giver if known, i.e. the person satisfying the request (&quot;N/A&quot; otherwise).
+
+  &quot;in_test_set&quot;: Boolean indicating whether this request was part of our test set.
+
+  &quot;number_of_downvotes_of_request_at_retrieval&quot;: Number of downvotes at the time the request was collected. 
+
+  &quot;number_of_upvotes_of_request_at_retrieval&quot;: Number of upvotes at the time the request was collected. 
+
+  &quot;post_was_edited&quot;: Boolean indicating whether this post was edited (from Reddit).
+
+  &quot;request_id&quot;: Identifier of the post on Reddit, e.g. &quot;t3_w5491&quot;.
+
+  &quot;request_number_of_comments_at_retrieval&quot;: Number of comments for the request at time of retrieval. 
+
+  &quot;request_text&quot;: Full text of the request.
+
+  &quot;request_text_edit_aware&quot;: Edit aware version of &quot;request_text&quot;. We use a set of rules to strip edited comments indicating the success of the request such as &quot;EDIT: Thanks /u/foo, the pizza was delicous&quot;. 
+
+  &quot;request_title&quot;: Title of the request.
+
+  &quot;requester_account_age_in_days_at_request&quot;: Account age of requester in days at time of request.
+
+  &quot;requester_account_age_in_days_at_retrieval&quot;: Account age of requester in days at time of retrieval.
+
+  &quot;requester_days_since_first_post_on_raop_at_request&quot;: Number of days between requesters first post on RAOP and this request (zero if requester has never posted before on RAOP). 
+
+  &quot;requester_days_since_first_post_on_raop_at_retrieval&quot;: Number of days between requesters first post on RAOP and time of retrieval. 
+
+  &quot;requester_number_of_comments_at_request&quot;: Total number of comments on Reddit by requester at time of request. 
+
+  &quot;requester_number_of_comments_at_retrieval&quot;: Total number of comments on Reddit by requester at time of retrieval.
+
+  &quot;requester_number_of_comments_in_raop_at_request&quot;: Total number of comments in RAOP by requester at time of request. 
+
+  &quot;requester_number_of_comments_in_raop_at_retrieval&quot;: Total number of comments in RAOP by requester at time of retrieval. 
+
+  &quot;requester_number_of_posts_at_request&quot;: Total number of posts on Reddit by requester at time of request. 
+
+  &quot;requester_number_of_posts_at_retrieval&quot;: Total number of posts on Reddit by requester at time of retrieval. 
+
+  &quot;requester_number_of_posts_on_raop_at_request&quot;: Total number of posts in RAOP by requester at time of request. 
+
+  &quot;requester_number_of_posts_on_raop_at_retrieval&quot;: Total number of posts in RAOP by requester at time of retrieval.
+
+  &quot;requester_number_of_subreddits_at_request&quot;: The number of subreddits in which the author had already posted in at the time of request.
+
+  &quot;requester_received_pizza&quot;: Boolean indicating the success of the request, i.e., whether the requester received pizza. 
+
+  &quot;requester_subreddits_at_request&quot;: The list of subreddits in which the author had already posted in at the time of request.
+
+  &quot;requester_upvotes_minus_downvotes_at_request&quot;: Difference of total upvotes and total downvotes of requester at time of request. 
+
+  &quot;requester_upvotes_minus_downvotes_at_retrieval&quot;: Difference of total upvotes and total downvotes of requester at time of retrieval.  
+
+  &quot;requester_upvotes_plus_downvotes_at_request&quot;: Sum of total upvotes and total downvotes of requester at time of request. 
+
+  &quot;requester_upvotes_plus_downvotes_at_retrieval&quot;: Sum of total upvotes and total downvotes of requester at time of retrieval. 
+
+  &quot;requester_user_flair&quot;: Users on RAOP receive badges (Reddit calls them flairs) which is a small picture next to their username. In our data set the user flair is either None (neither given nor received pizza, N=4282), &quot;shroom&quot; (received pizza, but not given, N=1306), or &quot;PIF&quot; (given after received, N=83).
+
+  &quot;requester_username&quot;: Reddit username of requester.
+
+  &quot;unix_timestamp_of_request&quot;: Unix timestamp of request (supposedly in timezone of user but in most cases equal to the UTC timestamp which is incorrect since most RAOP users are from the USA). 
+
+  &quot;unix_timestamp_of_request_utc&quot;: Unit timestamp of request in UTC.
+
+
+
+BibTex Entry:
+
+@inproceedings{althoff2014howtoaskforafavor,
+  title={{How to Ask for a Favor: A Case Study on the Success of Altruistic Requests}},
+  author={Althoff, Tim and Danescu-Niculescu-Mizil, Cristian and Jurafsky, Dan},
+  booktitle={Proceedings of the International Conference on Weblogs and Social Media (ICWSM)},
+  year={2014}
+}
+</PRE>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-49978552-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</BODY>
+</HTML>
